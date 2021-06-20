@@ -1,6 +1,6 @@
-Revenue Over Time
+## Revenue Over Time
 
-Find the 3-month rolling average of total revenue from purchases given a table with users, their purchase amount, and date purchased.
+###Objective:Find the 3-month rolling average of total revenue from purchases given a table with users, their purchase amount, and date purchased.
 
 SELECT X.MONTH, AVG(X.monthly_revenue)
        OVER(ORDER BY X.MONTH ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)
@@ -13,6 +13,7 @@ SELECT to_char(created_at::date, 'YYYY-MM') AS MONTH,
    GROUP BY to_char(created_at::date, 'YYYY-MM')
    ORDER BY to_char(created_at::date, 'YYYY-MM')
 ) X
+
 
 Find employees from Arizona, California, and Hawaii while making sure to output all employees from each city. 
 Output column headers should be Arizona, California, and Hawaii.
@@ -55,8 +56,8 @@ group by word
 order by count(viewer_id) desc
 
 
-Premium vs Freemium
-Find the total number of downloads for paying and non-paying users by date.
+## Premium vs Freemium
+Purpose: Find the total number of downloads for paying and non-paying users by date.
 
 with table_1 as(
 select date, paying_customer, downloads from ms_user_dimension mud
